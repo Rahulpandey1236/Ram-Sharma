@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Business Consultants | Finance, HR, Accounts & Compliance Excellence</title>
+    <meta name="description" content="Your Business Consultants – Expert consultancy in Finance, HR, Accounts, Taxation, and Regulatory Compliance.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #1e40af;
+            --secondary: #1e3a8a;
+            --accent: #f59e0b;
+            --light: #f8fafc;
+            --dark: #0f172a;
+            --gray: #64748b;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: var(--dark); background: #fff; }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; font-weight: 700; }
+
+        /* Header */
+        header {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo { font-size: 1.8rem; font-weight: 700; color: var(--primary); }
+        .nav-links a {
+            margin-left: 2rem;
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--primary); }
+
+        /* Hero, Services, About, Why Us, Contact – same as before */
+        .hero { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; padding: 160px 5% 100px; text-align: center; }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.3rem; max-width: 800px; margin: 0 auto 2rem; opacity: 0.9; }
+        .btn { display: inline-block; padding: 14px 36px; background: var(--accent); color: white; text-decoration: none; border-radius: 50px; font-weight: 600; transition: all 0.3s; margin: 0 10px; }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(245,158,11,0.3); }
+        .btn-outline { background: transparent; border: 2px solid white; }
+        .btn-outline:hover { background: white; color: var(--primary); }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .section-title { font-size: 2.8rem; text-align: center; margin-bottom: 1.5rem; color: var(--primary); }
+        .section-subtitle { font-size: 1.2rem; color: var(--gray); text-align: center; max-width: 700px; margin: 0 auto 4rem; }
+
+        /* Partners Section */
+        .partners {
+            padding: 100px 5%;
+            background: white;
+        }
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        .partner-card {
+            text-align: center;
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .partner-card:hover { transform: translateY(-10px); }
+        .partner-img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+        }
+        .partner-info {
+            padding: 1.8rem;
+        }
+        .partner-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+        .partner-info .title {
+            font-size: 1rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* Rest of sections (services, about, etc.) – unchanged styles */
+        .services, .about, .why-us, .contact { padding: 100px 5%; }
+        .services { background: var(--light); }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .about-img { background: url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat; height: 500px; border-radius: 16px; }
+        .grid, .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .card { background: white; padding: 2.5rem 2rem; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); transition: transform 0.3s; }
+        .card:hover, .why-item:hover { transform: translateY(-10px); }
+        .contact { background: var(--dark); color: white; text-align: center; }
+        footer { background: #0f172a; color: #94a3b8; text-align: center; padding: 3rem 5%; font-size: 0.9rem; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.8rem; }
+            .about-grid { grid-template-columns: 1fr; }
+            .nav-links a { margin-left: 1rem; font-size: 0.95rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <div class="logo">Your Business Consultants</div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#services">Services</a>
+                <a href="#partners">Partners</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Your Business Consultants</h1>
+            <p>Delivering Excellence in Finance, HR, Accounts & Regulatory Compliance</p>
+            <div>
+                <a href="#contact" class="btn">Get Started Today</a>
+                <a href="#services" class="btn btn-outline">Explore Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services (same as before) -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Our Core Expertise</h2>
+            <p class="section-subtitle">End-to-end solutions that drive efficiency, compliance, and growth</p>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Financial Consulting</h3>
+                    <p>Strategic financial planning, budgeting, forecasting, fundraising, and investment advisory.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-users"></i></div>
+                    <h3>Human Resources Excellence</h3>
+                    <p>Talent acquisition, organizational restructuring, performance management & payroll.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-calculator"></i></div>
+                    <h3>Accounting & Bookkeeping</h3>
+                    <p>Accurate bookkeeping, financial reporting, GST/VAT compliance and audit preparation.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Compliance & Risk Management</h3>
+                    <p>Regulatory compliance (RBI, SEBI, MCA, Labour Laws), secretarial services & risk assessment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: Partners Section -->
+    <section class="partners" id="partners">
+        <div class="container">
+            <h2 class="section-title">Meet Our Partners</h2>
+            <p class="section-subtitle">Leadership with decades of combined expertise driving your success</p>
+
+            <div class="partners-grid">
+                <!-- Harish Kumar Dubey -->
+                <div class="partner-card">
+                    <img src="Screenshot 2025-08-10 152724.png" alt="Harish Kumar Dubey" class="partner-img">
+                    <div class="partner-info">
+                        <h3>Harish Kumar Dubey</h3>
+                        <span class="title">Senior Partner & Founder</span>
+                        <p>With over 20 years of experience as a Chartered Accountant and business strategist, Harish has guided more than 300 companies toward financial excellence and sustainable growth. His expertise spans mergers, fundraising, and turnaround management.</p>
+                    </div>
+                </div>
+
+                <!-- Lokesh Solanki -->
+                <div class="partner-card">
+                    <img src="Lokesh.jpeg" alt="Lokesh Solanki" class="partner-img">
+                    <div class="partner-info">
+                        <h3>Lokesh Solanki</h3>
+                        <span class="title">Chief Accountant</span>
+                        <p>A seasoned accounting professional with 12+ years of experience, Lokesh specializes in IFRS, Ind-AS implementation, audit management, and financial restructuring. He ensures flawless books and 100% statutory compliance for all clients.</p>
+                    </div>
+                </div>
+
+                <!-- Satyabhan Pandey -->
+                <div class="partner-card">
+                    <img src="Satya.jpeg" alt="Satyabhan Pandey" class="partner-img">
+                    <div class="partner-info">
+                        <h3>Satyabhan Pandey</h3>
+                        <span class="title">Payroll & HR Compliance Specialist</span>
+                        <p>Expert in payroll processing, labour law compliance, ESIC, PF, and HR policy framework. Satyabhan has streamlined payroll operations for 150+ organizations, reducing compliance risks and improving employee satisfaction.</p>
+                    </div>
+                </div>
+
+                <!-- Ram Sharma -->
+                <div class="partner-card">
+                    <img src="Ram.jpeg" alt="Ram Sharma" class="partner-img">
+                    <div class="partner-info">
+                        <h3>Ram Sharma</h3>
+                        <span class="title">Tax Specialist & Compliance Head</span>
+                        <p>Renowned taxation expert handling Direct Tax, GST, Transfer Pricing, and International Taxation. Ram has successfully represented clients before ITAT and saved crores in tax litigation and planning for businesses across sectors.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div>
+                    <h2 class="section-title">Why Partner With Us?</h2>
+                    <p style="margin: 1.5rem 0; font-size: 1.1rem; color: var(--gray);">
+                        With over 15 years of industry experience, Your Business Consultants has empowered 200+ businesses to achieve operational excellence and regulatory compliance.
+                    </p>
+                    <ul style="margin: 2rem 0; line-height: 2;">
+                        <li><strong>Certified Experts:</strong> Chartered Accountants, Company Secretaries, HR Professionals & MBAs</li>
+                        <li><strong>Proven Track Record:</strong> 98% client retention rate</li>
+                        <li><strong>Pan-India Presence:</strong> Serving clients in 20+ states</li>
+                        <li><strong>Customized Solutions:</strong> Tailored approach for every client</li>
+                    </ul>
+                    <a href="#contact" class="btn">Schedule a Free Consultation</a>
+                </div>
+                <div class="about-img"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact (Updated Phone Numbers) -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Let’s Grow Your Business Together</h2>
+            <p class="section-subtitle" style="color:#cbd5e1;">Contact us for a free 30-minute consultation</p>
+            
+            <div class="contact-info" style="margin: 3rem 0; font-size: 1.3rem;">
+                <p><i class="fas fa-envelope"></i> info@yourbusinessconsultants.in</p>
+                <p><i class="fas fa-phone"></i> +91 81266 09579 | +91 70036 5110</p>
+                <p><i class="fas fa-map-marker-alt"></i> Mumbai | Delhi | Bangalore | Hyderabad</p>
+            </div>
+            
+            <a href="mailto:info@yourbusinessconsultants.in" class="btn">Email Us Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Your Business Consultants. All Rights Reserved. | Empowering Businesses Nationwide</p>
+    </footer>
+
+</body>
+</html>
